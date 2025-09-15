@@ -1,0 +1,398 @@
+/* CyberGuard Pro - Content Script Styles */
+
+/* Inject cyber-themed variables */
+:root {
+  --cyberguard-turquoise: #00C4CC;
+  --cyberguard-blue: #5A32FA;
+  --cyberguard-purple: #7D2AE8;
+  --cyberguard-pink: #FF6B9D;
+  --cyberguard-green: #00FF88;
+  --cyberguard-gradient-1: linear-gradient(135deg, #5A32FA, #7D2AE8);
+  --cyberguard-gradient-2: linear-gradient(135deg, #00C4CC, #00FF88);
+  --cyberguard-gradient-3: linear-gradient(135deg, #FF6B9D, #FFB84D);
+}
+
+/* Floating Panel Enhancements */
+#cyberguard-floating-panel {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#cyberguard-floating-panel:hover {
+  box-shadow: 0 12px 40px rgba(90, 50, 250, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* CyberGuard notifications */
+[id*="cyberguard"] {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Password strength indicator improvements */
+.cyberguard-password-strength {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Form warning enhancements */
+.cyberguard-form-warning {
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+/* Blocked ad placeholders */
+.cyberguard-ad-blocked {
+  background: var(--cyberguard-gradient-2) !important;
+  color: white !important;
+  text-align: center !important;
+  padding: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  margin: 4px !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.3s ease !important;
+  font-family: 'Segoe UI', sans-serif !important;
+}
+
+.cyberguard-ad-blocked:hover {
+  opacity: 1 !important;
+}
+
+/* Phishing warning overlay */
+.cyberguard-phishing-warning {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  animation: cyberguard-warning-pulse 2s infinite !important;
+}
+
+@keyframes cyberguard-warning-pulse {
+  0%, 100% { background-color: rgba(255, 71, 87, 0.9); }
+  50% { background-color: rgba(255, 107, 157, 0.9); }
+}
+
+/* Media permission dialog */
+.cyberguard-media-dialog {
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+}
+
+/* Identity protection warnings */
+.cyberguard-identity-warning {
+  animation: cyberguard-shake 0.5s ease-in-out !important;
+}
+
+@keyframes cyberguard-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Notification animations */
+.cyberguard-notification {
+  animation: cyberguard-slide-in 0.3s ease-out !important;
+}
+
+@keyframes cyberguard-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Privacy score indicator */
+.cyberguard-privacy-score {
+  background: var(--cyberguard-gradient-1) !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  position: fixed !important;
+  top: 80px !important;
+  right: 20px !important;
+  z-index: 999997 !important;
+  box-shadow: 0 4px 20px rgba(90, 50, 250, 0.4) !important;
+  animation: cyberguard-pulse 3s infinite !important;
+}
+
+@keyframes cyberguard-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(90, 50, 250, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(90, 50, 250, 0.6); }
+}
+
+/* Security status badges */
+.cyberguard-status-badge {
+  position: fixed !important;
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: var(--cyberguard-gradient-2) !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  z-index: 999996 !important;
+  box-shadow: 0 4px 15px rgba(0, 196, 204, 0.3) !important;
+  animation: cyberguard-fade-in 0.5s ease-out !important;
+}
+
+@keyframes cyberguard-fade-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Threat counter */
+.cyberguard-threat-counter {
+  position: fixed !important;
+  bottom: 80px !important;
+  left: 20px !important;
+  background: var(--cyberguard-gradient-3) !important;
+  color: white !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  z-index: 999995 !important;
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.4) !important;
+  min-width: 120px !important;
+  text-align: center !important;
+}
+
+/* Loading animations */
+.cyberguard-loading {
+  animation: cyberguard-spin 1s linear infinite !important;
+}
+
+@keyframes cyberguard-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Glow effects for interactive elements */
+.cyberguard-glow {
+  animation: cyberguard-glow 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes cyberguard-glow {
+  from { 
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
+    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.3));
+  }
+  to { 
+    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+    filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.5));
+  }
+}
+
+/* Hover effects for CyberGuard elements */
+[id*="cyberguard"]:hover,
+[class*="cyberguard"]:hover {
+  transition: all 0.3s ease !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cyberguard-card {
+    background: rgba(22, 27, 34, 0.95) !important;
+    border: 1px solid rgba(240, 246, 252, 0.1) !important;
+  }
+  
+  .cyberguard-text {
+    color: #F0F6FC !important;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #cyberguard-floating-panel {
+    width: 240px !important;
+    bottom: 10px !important;
+    right: 10px !important;
+    font-size: 12px !important;
+  }
+  
+  .cyberguard-notification {
+    max-width: 280px !important;
+    font-size: 13px !important;
+    right: 10px !important;
+    top: 10px !important;
+  }
+  
+  .cyberguard-privacy-score {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 12px !important;
+    right: 10px !important;
+    top: 60px !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  [id*="cyberguard"],
+  [class*="cyberguard"] {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  [id*="cyberguard"] *,
+  [class*="cyberguard"] * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles - hide CyberGuard elements */
+@media print {
+  [id*="cyberguard"],
+  [class*="cyberguard"] {
+    display: none !important;
+  }
+}
+
+/* Focus indicators for accessibility */
+[id*="cyberguard"] button:focus,
+[class*="cyberguard"] button:focus {
+  outline: 3px solid var(--cyberguard-green) !important;
+  outline-offset: 2px !important;
+}
+
+/* High performance GPU acceleration */
+[id*="cyberguard"],
+[class*="cyberguard"] {
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+}
+
+/* Security indicator styles */
+.cyberguard-secure {
+  border-left: 4px solid var(--cyberguard-green) !important;
+}
+
+.cyberguard-warning {
+  border-left: 4px solid #FFB84D !important;
+}
+
+.cyberguard-danger {
+  border-left: 4px solid #FF4757 !important;
+}
+
+/* Custom scrollbars for CyberGuard elements */
+[id*="cyberguard"]::-webkit-scrollbar,
+[class*="cyberguard"]::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+[id*="cyberguard"]::-webkit-scrollbar-track,
+[class*="cyberguard"]::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 3px !important;
+}
+
+[id*="cyberguard"]::-webkit-scrollbar-thumb,
+[class*="cyberguard"]::-webkit-scrollbar-thumb {
+  background: var(--cyberguard-gradient-1) !important;
+  border-radius: 3px !important;
+}
+
+[id*="cyberguard"]::-webkit-scrollbar-thumb:hover,
+[class*="cyberguard"]::-webkit-scrollbar-thumb:hover {
+  background: var(--cyberguard-gradient-2) !important;
+}
+
+/* Typography improvements */
+[id*="cyberguard"] h1,
+[id*="cyberguard"] h2,
+[id*="cyberguard"] h3,
+[class*="cyberguard"] h1,
+[class*="cyberguard"] h2,
+[class*="cyberguard"] h3 {
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+}
+
+[id*="cyberguard"] p,
+[class*="cyberguard"] p {
+  line-height: 1.6 !important;
+}
+
+/* Button improvements */
+[id*="cyberguard"] button,
+[class*="cyberguard"] button {
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.025em !important;
+}
+
+[id*="cyberguard"] button:hover,
+[class*="cyberguard"] button:hover {
+  transform: translateY(-1px) !important;
+  filter: brightness(1.1) !important;
+}
+
+[id*="cyberguard"] button:active,
+[class*="cyberguard"] button:active {
+  transform: translateY(0) !important;
+  filter: brightness(0.95) !important;
+}
+
+/* Icon improvements */
+[id*="cyberguard"] .icon,
+[class*="cyberguard"] .icon {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Card hover effects */
+.cyberguard-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Status indicators */
+.cyberguard-status-online {
+  color: var(--cyberguard-green) !important;
+}
+
+.cyberguard-status-warning {
+  color: #FFB84D !important;
+}
+
+.cyberguard-status-offline {
+  color: #FF4757 !important;
+}
+
+/* Glassmorphism effects */
+.cyberguard-glass {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Cyberpunk aesthetic touches */
+.cyberguard-cyber {
+  font-family: 'Courier New', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px currentColor !important;
+}

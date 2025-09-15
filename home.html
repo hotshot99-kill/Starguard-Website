@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarGuard - Next-Gen Browser Security</title>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="home.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="antialiased">
+    <!-- Back Button -->
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="container navbar">
+            <div class="navbar-top">
+                <h1 class="logo">StarGuard</h1>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="main-menu" class="main-menu">
+                <a href="#features">FEATURES</a>
+                <a href="#benefits">BENEFITS</a>
+                <a href="#testimonials">TESTIMONIALS</a>
+                <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.25rem;">
+                    <button onclick="window.location.href='logoin.html'" id="login-signup-button" class="back-button">
+                        LOGIN / SIGNUP
+                    </button>
+                    <button onclick="window.location.href='index.html'" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Message Display -->
+        <div id="message-box" class="message-box hidden"></div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-heading animate-pulse-subtle">
+                    Fortify Your Digital Frontier.
+                    <span>StarGuard is your ultimate browser shield, defending against phishing, malware, and identity theft in real-time. Experience unparalleled privacy and control.</span>
+                </h2>
+                <p class="hero-paragraph">
+                    StarGuard is your ultimate browser shield, defending against phishing, malware, and identity theft in real-time. Experience unparalleled privacy and control.
+                </p>
+                <!-- Hero Section Button: Add to Chrome -->
+                <button class="hero-button glow-blue"
+                        onclick="window.open('chrome://extensions/', '_blank'); setTimeout(() => { window.location.href='starguard-extension.zip'; }, 1000);">
+                    <i class="fas fa-download"></i> ADD STARGUARD TO CHROME
+                </button>
+                <!-- This button opens the Chrome extensions page and then triggers the extension file download. -->
+            </div>
+
+            <div class="hero-video-container">
+                <!-- Replace 'https://www.w3schools.com/html/mov_bbb.mp4' with your actual video URL -->
+                <video controls autoplay loop muted>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container text-center">
+                <h3>Unrivaled Protection, Intelligent Control.</h3>
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div><i class="fas fa-shield-alt"></i></div>
+                        <h4>Real-Time Threat Defense</h4>
+                        <p>Block phishing sites, malware, and malicious scripts before they can harm your browser or data.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div><i class="fas fa-user-secret"></i></div>
+                        <h4>Advanced Privacy Scoring</h4>
+                        <p>Get instant insights into your privacy exposure and take control with intelligent recommendations.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div><i class="fas fa-fingerprint"></i></div>
+                        <h4>Identity Theft Prevention</h4>
+                        <p>Proactively guard your personal information from unauthorized access and data breaches.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div><i class="fas fa-camera"></i></div>
+                        <h4>Webcam & Mic Blocking</h4>
+                        <p>Prevent unauthorized access to your camera and microphone for complete privacy.</p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="feature-card">
+                        <div><i class="fas fa-link-slash"></i></div>
+                        <h4>Malicious URL Detection</h4>
+                        <p>Instant alerts and blocking for dangerous links and suspicious websites.</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <div><i class="fas fa-chart-line"></i></div>
+                        <h4>Interactive Security Reports</h4>
+                        <p>Gain clear insights into your protected activity and potential threats over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="benefits-section">
+            <div class="container benefits-content">
+                <div class="benefits-text">
+                    <h3>Browse with Confidence. Live with Peace of Mind.</h3>
+                    <p>
+                        StarGuard seamlessly integrates into your browsing experience, working silently in the background to keep you safe. No more worrying about hidden threats, intrusive trackers, or compromised data. Focus on what matters, and let StarGuard handle the rest.
+                    </p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Enjoy a clean, ad-free browsing experience.</li>
+                        <li><i class="fas fa-check-circle"></i> Protect your sensitive information automatically.</li>
+                        <li><i class="fas fa-check-circle"></i> Gain full control over your digital footprint.</li>
+                        <li><i class="fas fa-check-circle"></i> Stay ahead of evolving online threats.</li>
+                    </ul>
+                </div>
+                <div class="benefits-image-container">
+                    <!-- Placeholder for a compelling visual of the extension in action -->
+                    <img src="https://placehold.co/600x400/1a202c/ffffff?text=StarGuard+Dashboard" alt="StarGuard Dashboard Screenshot" class="benefits-image glow-blue animate-pulse-subtle">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container text-center">
+                <h3>What Our Users Say.</h3>
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p>"StarGuard has completely changed how I browse. I feel so much safer online, and the privacy insights are incredibly helpful!"</p>
+                        <p>- Alex R.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p>"The real-time threat detection is a game-changer. I've seen it block suspicious sites that my old antivirus missed."</p>
+                        <p>- Sarah L.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p>"Simple to use, powerful protection. StarGuard is exactly what I needed to secure my online activities without any hassle."</p>
+                        <p>- David K.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta-section">
+            <div class="container">
+                <h3>Ready to Experience True Digital Freedom?</h3>
+                <p>
+                    Join thousands of users who trust StarGuard to keep their online world secure and private. Installation takes just seconds.
+                </p>
+                <!-- Final CTA Section Button: Download Extension -->
+                <button class="final-cta-button glow-green"
+                        onclick="window.location.href='C:\Users\Hotshot99\Desktop\PROJECT WEB\csc.jpeg';">
+                    <i class="fas fa-rocket"></i> GET STARGUARD NOW!
+                </button>
+                <!-- This button directly downloads your extension file. -->
+                <!-- Instructions for users (optional): -->
+                <p style="text-align:center; color:#8e44ad; font-size:1.1em; margin-top:1rem;">
+                    After downloading, go to <b>chrome://extensions</b>, enable <b>Developer mode</b>, and drag the downloaded file to install StarGuard.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2025 StarGuard. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modal-title">Welcome Back!</h4>
+                <button id="close-modal-button" class="close-modal-button">&times;</button>
+            </div>
+
+            <!-- Tab Buttons for Login/Signup -->
+            <div class="modal-tabs">
+                <button id="show-login" class="modal-tab-button active">Login</button>
+                <button id="show-signup" class="modal-tab-button">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="modal-form">
+                <input type="email" name="email" placeholder="Email Address">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit" class="modal-form-button glow-blue">
+                    LOGIN
+                </button>
+                <p class="modal-link-text">
+                    Don't have an account? <a href="#" id="signup-link-from-login">Sign Up</a>
+                </p>
+                <div class="modal-social-links">
+                    <a href="https://accounts.google.com/" target="_blank" aria-label="Login with Google"><i class="fab fa-google"></i></a>
+                    <a href="https://www.facebook.com/login/" target="_blank" aria-label="Login with Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/login" target="_blank" aria-label="Login with Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </form>
+
+            <!-- Sign Up Form (Initially hidden) -->
+            <form id="signup-form" class="modal-form hidden">
+                <input type="text" name="username" placeholder="Username">
+                <input type="email" name="email" placeholder="Email Address">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="confirm-password" placeholder="Confirm Password">
+                <button type="submit" class="modal-form-button glow-green">
+                    SIGN UP
+                </button>
+                <p class="modal-link-text">
+                    Already have an account? <a href="#" id="login-link-from-signup">Login</a>
+                </p>
+                <div class="modal-social-links">
+                    <a href="https://accounts.google.com/" target="_blank" aria-label="Sign up with Google"><i class="fab fa-google"></i></a>
+                    <a href="https://www.facebook.com/login/" target="_blank" aria-label="Sign up with Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/login" target="_blank" aria-label="Sign up with Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Firebase SDKs and Inline Script -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the Canvas environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // UI elements for messages
+        const messageBox = document.getElementById('message-box');
+
+        // Function to display messages
+        function showMessage(message, type = 'info') {
+            messageBox.textContent = message;
+            messageBox.className = `message-box ${type}`; // Add type for styling (e.g., 'success', 'error')
+            messageBox.classList.remove('hidden');
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 5000); // Hide after 5 seconds
+        }
+
+        // Authentication state observer (simplified, no direct display on page)
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // User is signed in.
+                const userId = user.uid;
+                console.log(`User logged in with ID: ${userId}, Email: ${user.email || 'Anonymous'}`);
+            } else {
+                // User is signed out or anonymous.
+                console.log('User is not logged in or is anonymous.');
+            }
+        });
+
+        // Initial authentication attempt (anonymous or with custom token)
+        async function authenticateUser() {
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                    console.log('Signed in with custom token.');
+                } else {
+                    await signInAnonymously(auth);
+                    console.log('Signed in anonymously.');
+                }
+            } catch (error) {
+                console.error('Authentication error:', error);
+            }
+        }
+
+        // Call initial authentication on load
+        authenticateUser();
+
+        // --- Modal and Form Toggling Logic ---
+        const loginSignupButton = document.getElementById('login-signup-button');
+        const authModal = document.getElementById('auth-modal');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const modalTitle = document.getElementById('modal-title');
+
+        const showLoginButton = document.getElementById('show-login');
+        const showSignupButton = document.getElementById('show-signup');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+
+        const signupLinkFromLogin = document.getElementById('signup-link-from-login');
+        const loginLinkFromSignup = document.getElementById('login-link-from-signup');
+
+        function showForm(formToShow) {
+            loginForm.classList.add('hidden');
+            signupForm.classList.add('hidden');
+            showLoginButton.classList.remove('active');
+            showSignupButton.classList.remove('active');
+
+            if (formToShow === 'login') {
+                loginForm.classList.remove('hidden');
+                showLoginButton.classList.add('active');
+                modalTitle.textContent = 'Welcome Back!';
+            } else if (formToShow === 'signup') {
+                signupForm.classList.remove('hidden');
+                showSignupButton.classList.add('active');
+                modalTitle.textContent = 'Create Your Account';
+            }
+        }
+
+        // --- DEBUGGING: Add console.log here to check if button click is detected ---
+        loginSignupButton.addEventListener('click', () => {
+            console.log('LOGIN / SIGNUP button clicked!'); // This line will tell us if the event listener is working
+            authModal.style.display = 'flex';
+            showForm('login'); // Default to showing login form when modal opens
+        });
+
+        closeModalButton.addEventListener('click', () => {
+            authModal.style.display = 'none';
+        });
+
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                authModal.style.display = 'none';
+            }
+        });
+
+        showLoginButton.addEventListener('click', () => showForm('login'));
+        showSignupButton.addEventListener('click', () => showForm('signup'));
+        signupLinkFromLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            showForm('signup');
+        });
+        loginLinkFromSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            showForm('login');
+        });
+
+        // --- Firebase Login and Sign Up Logic ---
+
+        // Login Form Submission
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = loginForm.querySelector('input[name="email"]').value;
+            const password = loginForm.querySelector('input[name="password"]').value;
+
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                showMessage('Logged in successfully!', 'success');
+                authModal.style.display = 'none'; // Close modal on success
+                window.location.href = 'welcome.html'; // Redirect to welcome page
+            } catch (error) {
+                console.error('Login error:', error);
+                showMessage(`Login failed: ${error.message}`, 'error');
+            }
+        });
+
+        // Sign Up Form Submission
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = signupForm.querySelector('input[name="username"]').value.trim();
+            const email = signupForm.querySelector('input[name="email"]').value.trim();
+            const password = signupForm.querySelector('input[name="password"]').value;
+            const confirmPassword = signupForm.querySelector('input[name="confirm-password"]').value;
+
+            // Basic client-side validation
+            if (!username || !email || !password || !confirmPassword) {
+                showMessage('Please fill in all fields.', 'error');
+                return;
+            }
+            if (password.length < 6) {
+                showMessage('Password must be at least 6 characters long.', 'error');
+                return;
+            }
+            if (password !== confirmPassword) {
+                showMessage('Passwords do not match.', 'error');
+                return;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                const userId = user.uid;
+
+                // Store user profile data in Firestore
+                // Collection path: /artifacts/{appId}/users/{userId}/profiles/{userId}
+                const userProfileRef = doc(db, `artifacts/${appId}/users/${userId}/profiles`, userId);
+                await setDoc(userProfileRef, {
+                    username: username,
+                    email: email,
+                    createdAt: new Date()
+                });
+
+                showMessage('Sign Up successful! You can now log in.', 'success');
+                authModal.style.display = 'none'; // Close modal on success
+                showForm('login'); // Optionally switch to login form
+                window.location.href = 'welcome.html'; // Redirect to welcome page
+            } catch (error) {
+                console.error('Sign Up error:', error);
+                showMessage(`Sign Up failed: ${error.message}`, 'error');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                const mainMenu = document.getElementById('main-menu');
+                if (mainMenu.classList.contains('flex-display') && window.innerWidth < 768) {
+                    mainMenu.classList.remove('flex-display');
+                }
+            });
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mainMenu = document.getElementById('main-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mainMenu.classList.toggle('flex-display');
+        });
+    </script>
+</body>
+</html>

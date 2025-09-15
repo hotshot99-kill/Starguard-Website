@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Star Guard</title>
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font for consistent typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for gradients, glows, and animations -->
+    <style>
+        /*
+         * This file contains all the CSS styles for the Star Guard webpage.
+         * The styles are designed to complement the Tailwind CSS classes used in the HTML.
+         */
+
+        /* Global styles for both light and dark themes */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Light Mode Styles - Default */
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f0f2f5;
+                color: #333333;
+                background-image: radial-gradient(circle at top left, rgba(74, 144, 226, 0.1) 0%, transparent 40%),
+                                  radial-gradient(circle at bottom right, rgba(142, 68, 173, 0.08) 0%, transparent 40%),
+                                  linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+                background-size: cover;
+                background-position: center;
+            }
+            
+            /* Custom Scrollbar Styling - Light Mode */
+            ::-webkit-scrollbar {
+                width: 10px;
+                background: #f0f2f5;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #a0a0a0 0%, #c0c0c0 100%);
+                border-radius: 8px;
+                border: 2px solid #f0f2f5;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #888888 0%, #a0a0a0 100%);
+            }
+            /* Firefox - Light Mode */
+            html {
+                scrollbar-color: #a0a0a0 #f0f2f5;
+                scrollbar-width: thin;
+            }
+            
+            /* Custom glow effects (blue & green) as per guide */
+            .glow-blue {
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.4), inset 0 0 5px rgba(59, 130, 246, 0.2);
+            }
+            .glow-green {
+                box-shadow: 0 0 10px rgba(34, 197, 94, 0.4), inset 0 0 5px rgba(34, 197, 94, 0.2);
+            }
+            
+            /* The custom-bg-and-glow class for the main container */
+            .custom-bg-and-glow {
+                background-color: #f0f2f5;
+                background-image: radial-gradient(circle at top left, rgba(74, 144, 226, 0.1) 0%, transparent 40%),
+                                  radial-gradient(circle at bottom right, rgba(142, 68, 173, 0.08) 0%, transparent 40%),
+                                  linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+                border: 1px solid #e0e0e0;
+                box-shadow: rgba(0, 0, 0, 0.05) 0 4px 6px -1px, rgba(0, 0, 0, 0.03) 0 2px 4px -2px;
+            }
+            
+            .feature-card-bg {
+                background-color: #ffffff;
+                border-color: #e0e0e0;
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: rgba(0, 0, 0, 0.05) 0 4px 6px -1px, rgba(0, 0, 0, 0.03) 0 2px 4px -2px;
+            }
+            .feature-card-bg:hover {
+                border-color: #4a90e2;
+                box-shadow: rgba(0, 0, 0, 0.15) 0 10px 15px -3px, rgba(0, 0, 0, 0.1) 0 4px 6px -2px;
+            }
+            .feature-card-text {
+                color: #444444;
+            }
+            
+            /* Button styles */
+            .button-gradient {
+                background-image: linear-gradient(to right, #4a90e2, #8e44ad);
+                color: #ffffff;
+            }
+            .button-gradient:hover {
+                background-image: linear-gradient(to right, #357bd8, #7e349a);
+            }
+            .button-gradient:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+                box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+            }
+
+            /* Header text gradients */
+            .hero-heading {
+                background-image: linear-gradient(to right, #4a90e2, #8e44ad);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                animation: fadeInGlow 2s ease-in-out;
+            }
+            .hero-subheading {
+                color: #555555;
+            }
+            .welcome-text {
+                background-image: linear-gradient(to right, #2ecc71, #3498db);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                animation: fadeInGlow 2s ease-in-out;
+            }
+            .welcome-paragraph {
+                color: #666666;
+            }
+
+            /* Icon and text colors based on the guide */
+            .icon-green { color: #27ae60; }
+            .icon-blue { color: #3498db; }
+            .icon-purple { color: #9b59b6; }
+            .icon-yellow { color: #f1c40f; }
+            .icon-red { color: #e74c3c; }
+            .icon-teal { color: #1abc9c; }
+        }
+
+        /* --- Dark Mode Styles --- */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a202c;
+                color: #e2e8f0;
+                background-image: radial-gradient(circle at top left, rgba(159, 122, 234, 0.2) 0%, transparent 40%),
+                                  radial-gradient(circle at bottom right, rgba(159, 122, 234, 0.2) 0%, transparent 40%),
+                                  linear-gradient(135deg, #1a202c 0%, #0c1218 100%);
+            }
+            
+            /* Dark Mode Scrollbar */
+            ::-webkit-scrollbar {
+                background: #1a202c;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+                border: 2px solid #1a202c;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #384253 0%, #2d3748 100%);
+            }
+            /* Firefox - Dark Mode */
+            html {
+                scrollbar-color: #2d3748 #1a202c;
+            }
+            
+            /* Dark Mode Glows */
+            .glow-blue {
+                box-shadow: 0 0 10px rgba(159, 122, 234, 0.5), inset 0 0 5px rgba(159, 122, 234, 0.3);
+            }
+            .glow-green {
+                box-shadow: 0 0 10px rgba(138, 204, 186, 0.5), inset 0 0 5px rgba(138, 204, 186, 0.3);
+            }
+            
+            .custom-bg-and-glow {
+                background-color: #1a202c;
+                background-image: radial-gradient(circle at top left, rgba(159, 122, 234, 0.2) 0%, transparent 40%),
+                                  radial-gradient(circle at bottom right, rgba(159, 122, 234, 0.2) 0%, transparent 40%),
+                                  linear-gradient(135deg, #1a202c 0%, #0c1218 100%);
+                border: 1px solid #4a90e2;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 4px 6px -1px, rgba(0, 0, 0, 0.1) 0 2px 4px -2px;
+            }
+            
+            .feature-card-bg {
+                background-color: rgba(45, 55, 72, 0.8);
+                border-color: #2d3748;
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 4px 6px -1px, rgba(0, 0, 0, 0.1) 0 2px 4px -2px;
+            }
+            .feature-card-bg:hover {
+                border-color: #9f7aea;
+                box-shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.2) 0 4px 6px -2px;
+            }
+            .feature-card-text {
+                color: #e2e8f0;
+            }
+            .button-gradient {
+                background-image: linear-gradient(to right, #4a90e2, #8e44ad);
+                color: #ffffff;
+            }
+            .button-gradient:hover {
+                background-image: linear-gradient(to right, #357bd8, #7e349a);
+            }
+            .button-gradient:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+                box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.5);
+            }
+            
+            .hero-heading {
+                background-image: linear-gradient(to right, #4a90e2, #8e44ad);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                animation: fadeInGlow 2s ease-in-out;
+            }
+            .hero-subheading {
+                color: #a0a0a0;
+            }
+            .welcome-text {
+                background-image: linear-gradient(to right, #2ecc71, #3498db);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                animation: fadeInGlow 2s ease-in-out;
+            }
+            .welcome-paragraph {
+                color: #dbe0e6;
+            }
+            
+            /* Icon colors in dark mode */
+            .icon-green { color: #50d71e; }
+            .icon-blue { color: #60a5fa; }
+            .icon-purple { color: #d09ee6; }
+            .icon-yellow { color: #facc15; }
+            .icon-red { color: #f87171; }
+            .icon-teal { color: #2dd4bf; }
+        }
+
+        /* Common styles below apply to both themes */
+        @keyframes fadeInGlow {
+            0% { opacity: 0; text-shadow: none; }
+            50% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .text-5xl { font-size: 2.5rem; }
+            .text-6xl { font-size: 3.2rem; }
+            .text-xl { font-size: 1rem; }
+            .text-2xl { font-size: 1.3rem; }
+            .text-base { font-size: 0.85rem; }  
+            .text-lg { font-size: 0.9rem; }
+            .p-6 { padding: 1rem; }
+            .p-4 { padding: 0.6rem; }
+            .mb-6 { margin-bottom: 1rem; }
+            .mb-8 { margin-bottom: 1.25rem; }
+            .mb-3 { margin-bottom: 0.4rem; }
+            .w-16 { width: 3rem; height: 3rem; }
+            .text-xl { font-size: 1rem; }
+            .text-sm { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    
+    <div class="w-screen h-screen rounded-none shadow-none p-6 md:p-8">
+        <!-- Header Section -->
+        <header class="text-center mb-6">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-2 tracking-wider hero-heading animated-welcome">
+                Star Guard
+            </h1>
+            <p class="text-xl md:text-2xl font-light italic hero-subheading">
+                Your Digital Fortress in the Cyber Frontier
+            </p>
+        </header>
+
+        <!-- Welcome Message Section -->
+        <section class="text-center mb-8">
+            <p class="text-2xl md:text-3xl font-semibold welcome-text animated-welcome">
+                Welcome, Guardian. Your journey to a safer web begins now.
+            </p>
+            <p class="text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-4 welcome-paragraph">
+                Star Guard is your ultimate shield. We provide robust protection for a secure, private, and uninterrupted Browse experience. Navigate the web with unparalleled confidence.
+            </p>
+        </section>
+
+        <!-- Feature Cards Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 flex-grow">
+
+            <!-- Feature Card: Ad Blocking -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Ad Blocking</h3>
+                <p class="text-sm feature-card-text">
+                    Eliminate intrusive ads for a cleaner, faster Browse experience.
+                </p>
+            </div>
+
+            <!-- Feature Card: Category Restriction -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Category Restriction</h3>
+                <p class="text-sm feature-card-text">
+                    Control web content access by restricting specific categories.
+                </p>
+            </div>
+
+            <!-- Feature Card: Webcam & Mic Blocking -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2zM19 10l-6 6M12 12V6m0 6h6m-6 0H6m6 0v6"></path>
+                    <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"></line>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Webcam & Mic Blocking</h3>
+                <p class="text-sm feature-card-text">
+                    Prevent unauthorized access to your webcam and microphone.
+                </p>
+            </div>
+
+            <!-- Feature Card: Phishing Protection -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002 12c0 2.755 1.09 5.284 2.864 7.234L12 22l7.136-2.766A12.007 12.007 0 0022 12c0-2.755-1.09-5.284-2.864-7.234z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Phishing Protection</h3>
+                <p class="text-sm feature-card-text">
+                    Stay secure from deceptive websites and phishing attempts.
+                </p>
+            </div>
+
+            <!-- Feature Card: Password Strength Checker -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Password Strength Checker</h3>
+                <p class="text-sm feature-card-text">
+                    Ensure your passwords are robust and secure against common threats.
+                </p>
+            </div>
+
+            <!-- Feature Card: Privacy Analyzer -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Privacy Analyzer</h3>
+                <p class="text-sm feature-card-text">
+                    Understand and control your digital footprint for enhanced privacy online.
+                </p>
+            </div>
+            
+            <!-- Feature Card: Malware Scanner -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l7 4v6c0 5.25-3.5 9.74-7 10-3.5-.26-7-4.75-7-10V6l7-4z"></path>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3m0 0v3m-2-2h4"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Malware Scanner</h3>
+                <p class="text-sm feature-card-text">
+                    Detect and block malware for safe, uninterrupted Browse.
+                </p>
+            </div>
+
+            <!-- Feature Card: Identity Protection -->
+            <div class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg">
+                <svg class="w-10 h-10 mb-3 icon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2 feature-card-text">Identity Protection</h3>
+                <p class="text-sm feature-card-text">
+                    Browse confidently, with assurance that your identity is protected.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="text-center mt-auto">
+            <div
+                class="p-4 rounded-lg shadow-xl flex flex-col items-center text-center border transition-all duration-300 transform hover:scale-105 glow-blue feature-card-bg"
+            >
+                <button
+                    onclick="location.href='home.html'"
+                    class="font-bold py-3 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-105 button-gradient"
+                >
+                    Get Started
+                </button>
+                <p class="mt-4 welcome-paragraph text-xs md:text-sm">
+                    Configure security settings anytime in the Star Guard extension options.
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
